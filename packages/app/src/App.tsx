@@ -11,7 +11,8 @@ import {
 import { AsyncStorageExample } from "./AsyncStorageExample";
 import { subplatform } from "./config";
 import LogoSrc from "./logo.png";
-
+import LotsOfGreetings from "./HelloProps";
+import HelloClasses from "./HelloClass";
 export function App(): JSX.Element {
   const platformValue = subplatform
     ? `${Platform.OS} (${subplatform})`
@@ -22,6 +23,13 @@ export function App(): JSX.Element {
           complains about the image type, so we cast it as a workaround  */}
       <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} />
       <Text style={styles.text}>Hello from React Native!</Text>
+      <View style={styles.platformRow}>
+        <Text style={styles.text}>HelloProps: </Text>
+        <LotsOfGreetings />
+      </View>
+      <View>
+        <HelloClasses></HelloClasses>
+      </View>
       <View style={styles.platformRow}>
         <Text style={styles.text}>Platform: </Text>
         <View style={styles.platformBackground}>
